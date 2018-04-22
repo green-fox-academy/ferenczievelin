@@ -12,9 +12,9 @@ public class Factorial {
     }
 
     private static int factorio(int numberToFact) {
-        int factorial=1;
-        for (int i = 1; i <numberToFact ; i++) {
-            factorial=i*numberToFact;
+        int factorial = 1;
+        for (int i = 1; i < numberToFact; i++) {
+            factorial = i * numberToFact;
 
         }
         return factorial;
