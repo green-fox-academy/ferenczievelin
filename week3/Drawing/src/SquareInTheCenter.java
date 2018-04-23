@@ -4,24 +4,15 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class GoToCenter {
+public class SquareInTheCenter {
+
     public static void mainDraw(Graphics graphics) {
-        // Create a line drawing function that takes 2 parameters:
-        // The x and y coordinates of the line's starting point
-        // and draws a line from that point to the center of the canvas.
-        // Draw 3 lines with that function. Use loop for that.
-
-
-        for (int i = 0; i < 3; i++) {
-            int x = (int) (Math.random() * 100);
-            int y = (int) (Math.random() * 100);
-
-            graphics.drawLine(x, y, 160, 171);
-        }
+        // Draw a green 10x10 square to the canvas' center.
+        graphics.setColor(Color.GREEN);
+        graphics.drawRect((WIDTH / 2 - 5), (HEIGHT / 2 - 5), 10, 10);
 
 
     }
-
 
     // Don't touch the code below
     static int WIDTH = 320;
@@ -41,6 +32,7 @@ public class GoToCenter {
         protected void paintComponent(Graphics graphics) {
             super.paintComponent(graphics);
             mainDraw(graphics);
+
         }
     }
 }

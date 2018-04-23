@@ -17,7 +17,7 @@ public class CandyShop {
         // Expected output: "Cupcake", "Croissant", "Brownie", "Ice cream"
     }
 
-    private static ArrayList sweets(ArrayList<Object> arrayList) {
+    private static String sweets(ArrayList<Object> arrayList) {
         for (int i = 0; i < arrayList.size(); i++) {
             if (arrayList.get(i).equals(2)){
                 arrayList.remove(i);
@@ -28,7 +28,7 @@ public class CandyShop {
                 arrayList.add(i,"ice cream");
             }
         }
-
+        return String.valueOf(arrayList);
 
 
     }
