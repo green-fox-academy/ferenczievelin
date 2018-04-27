@@ -18,8 +18,7 @@ public class WriteMultipleLines {
         Path writelines = Paths.get("wordNumber.txt");
         String word = "SomethingWonderful";
         int numberOfLines = 8;
-        writeLines(writelines,word,numberOfLines);
-
+        writeLines(writelines, word, numberOfLines);
 
 
     }
@@ -28,14 +27,13 @@ public class WriteMultipleLines {
 
 
         ArrayList<String> someStuffToWrite = new ArrayList<>();
-        for (int i = 0; i <numberOfLines ; i++) {
+        for (int i = 0; i < numberOfLines; i++) {
             someStuffToWrite.add(word);
         }
 
         try {
-            Files.write(path,someStuffToWrite);
-        }
-        catch (IOException e) {
+            Files.write(path, someStuffToWrite);
+        } catch (IOException e) {
 
         }
 
