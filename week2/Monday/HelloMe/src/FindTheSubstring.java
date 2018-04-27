@@ -5,18 +5,15 @@ public class FindTheSubstring {
         //  Returns `-1` if the second string is not in the first one
         String string1= "Hello world";
         String string2 = "lo";
-
-        //  Example:
-        System.out.println(subStr("this is what I'm searching in", "searching"));
-        //  should print: `17`
-        System.out.println(subStr("this is what I'm searching in", "not"));
-        //  should print: `-1`
+        System.out.println(subStr(string1, string2));
     }
 
     public static int subStr(String input, String q) {
-        if (input.substring())
 
-        return -1;
+        if (input.contains(q))
+            return input.indexOf(q);
+
+        else return -1;
     }
 }
 
