@@ -15,7 +15,13 @@ public class QuoteSwap{
 
     }
 
-    private static String quoteSwap(ArrayList<String> list) {
-
+    private static ArrayList<String> quoteSwap(ArrayList<String> list) {
+        ArrayList rightQuote = new ArrayList<String>();
+        String temp = "";
+        temp = list.get(2);
+        list.set(2, list.get(5));
+        list.set(5, temp);
+        return list;
     }
+
 }
