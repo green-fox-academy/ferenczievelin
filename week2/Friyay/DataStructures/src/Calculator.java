@@ -9,7 +9,7 @@ public class Calculator {
         int firstNumber = scanner.nextInt();
         System.out.println("Enter the second number");
         int secondNumber = scanner.nextInt();
-        System.out.println(calculator(op, firstNumber, secondNumber));
+        System.out.println("The result is : " +calculator(op, firstNumber, secondNumber));
 
 
     }
