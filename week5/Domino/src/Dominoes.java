@@ -40,7 +40,7 @@ public class Dominoes {
             else if (dominoes.get(i).getValues()[1] == (sorted.get(elementsOfSorted-1).getValues()[1])) {
                 int [] flip = new int[2];
                 flip = new int[]{dominoes.get(i).getValues()[1], dominoes.get(i).getValues()[0]};
-                
+
             }
         }
         return sorted;
