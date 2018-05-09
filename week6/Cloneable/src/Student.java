@@ -1,4 +1,4 @@
-public class Student extends Person implements Cloneable{
+public class Student extends Person implements Cloneable {
     String previousOrganization;
     int skippedDays;
 
@@ -31,6 +31,11 @@ public class Student extends Person implements Cloneable{
         skippedDays += numberOfDays;
         return skippedDays;
     }
+
+    public Object clone()throws CloneNotSupportedException{
+        return (Student)super.clone();
+    }
+
 
 
 }
