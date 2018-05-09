@@ -1,50 +1,42 @@
+
 import java.util.ArrayList;
-import java.util.Scanner;
+
 
 public class Garden {
     static ArrayList<Plant> plants;
+    static ArrayList <Plant> thirstyPlants;
     static double waterAmount;
 
 
-    public Garden() {
-        this.plants = new ArrayList<>();
-    }
 
-    public static void fillGarden() {
-        Flower flower1 = new Flower("yellow");
-        this.plants.add(flower1);
-        Flower flower2 = new Flower("blue");
-        this.plants.add(flower2);
-        Tree tree1 = new Tree("orange");
-        this.plants.add(tree1);
-        Tree tree2 = new Tree("purple");
-        this.plants.add(tree2);
+    public Garden() {
+        plants = new ArrayList<>();
 
     }
 
     public static ArrayList<Plant> thirstyPlants() {
+        thirstyPlants = new ArrayList<Plant>();
         for (int i = 0; i < plants.size(); i++) {
-            if (plants.get(i).thirsty = true) {
-                thirstyPlants().add(plants.get(i));
+            if (Plant.currentWater < Plant.neededWater) {
+                thirstyPlants.add(plants.get(i));
             }
         }
-        return thirstyPlants();
+        return thirstyPlants;
+    }
+    static void printthirsty (ArrayList <Plant> thirstyPlants) {
+        for (int i = 0; i <thirstyPlants.size() ; i++) {
+
+            System.out.println((thirstyPlants.get(i).color + thirstyPlants.get(i).type + " needs water"));
+        }
     }
 
 
-    public static void waterPlants(double waterAmount) {
-        waterAmount /= thirstyPlants().size();
-        for (int i = 0; i < thirstyPlants().size(); i++) {
-            thirstyPlants().get(i).currentWater += (thirstyPlants().get(i).currentWater*thirstyPlants().get(i).absorbationAbility);
+    void waterPlants (double waterAmount) {
+            double waterPerPlant = waterAmount/thirstyPlants.size();
+        for (int i = 0; i < thirstyPlants.size(); i++) {
+            Plant.currentWater += (waterPerPlant * thirstyPlants.get(i).absorbationAbility);
         }
 
-
-        public static void main (String[]args){
-            fillGarden();
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("How much water do we have");
-            waterAmount = scanner.nextDouble();
-
-        }
     }
 }
+

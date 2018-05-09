@@ -5,6 +5,5 @@ public class Flower extends Plant {
         this.neededWater = 5;
         this.absorbationAbility = 0.75;
 
-
     }
 }
