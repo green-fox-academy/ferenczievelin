@@ -8,6 +8,23 @@ public class Animal {
         this.thurst = 50;
     }
 
+    public int getHunger() {
+        return hunger;
+    }
+
+    public void setHunger(int hunger) {
+        this.hunger = hunger;
+    }
+
+    public int getThurst() {
+        return thurst;
+    }
+
+    public void setThurst(int thurst) {
+        this.thurst = thurst;
+    }
+
+
     public int eat() {
         this.hunger--;
         return hunger;
