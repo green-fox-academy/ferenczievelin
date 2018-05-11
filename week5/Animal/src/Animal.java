@@ -2,6 +2,7 @@ public class Animal {
 
     int hunger;
     int thurst;
+    String name;
 
     Animal() {
         this.hunger = 50;
