@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Domino implements Comparable<Domino> {
+public class Domino implements Comparable{
     private final int[] values;
 
     public Domino(int valueA, int valueB) {
@@ -17,15 +17,7 @@ public class Domino implements Comparable<Domino> {
     }
 
     @Override
-    public int compareTo(Domino o) {
-        if (this.values[0] > o.values[0]) {
-        return this.values[0]; }
-        else if (this.values[0] < o.values[0]) {
-            return o.values[0];
-        } else if (this.values[0] == o.values[1]) {
-            return this.values[0];
-        }
-
-        return ;
+    public int compareTo(Object object) {
+        return 0;
     }
 }
