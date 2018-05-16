@@ -35,6 +35,6 @@ public class SumTest {
 
     @Test
     public void testWithNull () {
-        // todo testwithnull 
+        // todo testwithnull
     }
 }
