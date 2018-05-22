@@ -16,8 +16,8 @@ public class Board extends JComponent implements KeyListener {
     PositionedImage image = new PositionedImage("hero-down.png", 0, 0);
 
     public Board() {
-        testBoxX = 0;
-        testBoxY = 0;
+       // testBoxX = 0;
+       // testBoxY = 0;
 
         // set the size of your draw board
         setPreferredSize(new Dimension(720, 720));
@@ -32,27 +32,14 @@ public class Board extends JComponent implements KeyListener {
         graphics.fillRect(testBoxX, testBoxY, 100, 100);
         // here you have a 720x720 canvas
         // you can create and draw an image using the class below e.g.
-        for (int i = 0; i < 10 ; i++) {
-            for (int j = 0; j <10 ; j++) {
-
-            }
-
-        }
-
 
         image.draw(graphics);
 
 
 
+
     }
-    public int [][] map (String filename) throws IOException {
-        Path mapFile = Paths.get("level0.txt");
-        int[][] map =
-                Files.lines(Paths.get("level0.txt"))
-                        .map(item -> item.chars().filter(i -> (char) i != ' ').map(Character::getNumericValue).toArray())
-                        .toArray(int[][]::new);
-        return map;
-    }
+
 
 
     // To be a KeyListener the class needs to have these 3 methods in it
