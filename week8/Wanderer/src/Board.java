@@ -34,6 +34,7 @@ public class Board extends JComponent implements KeyListener {
         // you can create and draw an image using the class below e.g.
 
         image.draw(graphics);
+
     }
 
     // To be a KeyListener the class needs to have these 3 methods in it
