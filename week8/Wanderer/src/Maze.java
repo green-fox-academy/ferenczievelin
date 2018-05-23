@@ -1,67 +1,62 @@
+import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
-import java.util.Scanner;
-import javax.swing.*;
+import java.util.stream.Collectors;
 
-public class Maze {
-    String path;
-    public static int rows;
-    public static int columns;
-    public static int[][] cells;
+public class Maze  {
+   static ArrayList<ArrayList<Character>> map;
+   Maze () {
 
-    public Maze(String path) {
-        this.path = path;
-    }
+   }
+    public static ArrayList<ArrayList<Character>> map() {
+       map = new ArrayList<>();
+        try {
+            ArrayList<String> lines =
+                    (ArrayList<String>) Files.readAllLines(Paths.get("level0.txt"));
 
-    public Maze () {
+            ArrayList<Character> lineInChars;
 
-    }
+            for (String line : lines) {
 
-    public static int [][] map (String filename) throws IOException {
-     //   int[][] map = new int[10][10];
-
-        {
-            Scanner scan = new Scanner(new File("level0.txt"));
-          int  numRows = scan.nextInt();
-          int  numColumns = scan.nextInt();
-         int [][]   mazeArray = new int[numRows][numColumns];
-
-
-            for(int row = 0; row < numRows; row++)
-            {
-                String strings = scan.next();
-
-                for(int column = 0; column < numColumns; column++)
-                {
-                    mazeArray[row][column] = strings.charAt(row);
-                    System.out.print(mazeArray[row][column]);
+                lineInChars = new ArrayList<Character>();
+                for (char actChar : line.toCharArray()) {
+                    List<java.lang.Character> map = line.chars().mapToObj(e->(actChar)).collect(Collectors.toList());
                 }
-                System.out.print("\n");
+
+                map.add(lineInChars);
             }
 
-        catch (Exception e) {
-            System.out.println(e);
+        } catch (IOException e) {
+            System.out.println("upsey happened");
         }
-        return mazeArray;
-
+        return map;
     }
+    public void drawMaze (Graphics graphics ) {
 
-    void drawTheMaze (Graphics graphics) {
-        for (int i = 0; i < 10 ; i++) {
-            for (int j = 0; j < 10 ; j++) {
-        //        if (map[i][j])
 
+        for (int i = 0; i < map.size() ; i++) {
+            for (int j = 0; j < map.get(i).size(); j++) {
+                {
+                    if (map.get(i).get(j).equals('p')) {
+                        PositionedImage path = new PositionedImage("floor.png", i*72, j*72);
+                        path.draw(graphics);
+
+
+                    } else {
+                        PositionedImage wall = new PositionedImage("wall.png", i*72, j*72);
+                        wall.draw(graphics);
+
+                    }
+
+                }
             }
-            
+
         }
-
     }
-
 }

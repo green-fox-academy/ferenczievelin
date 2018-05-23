@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Board extends JComponent implements KeyListener {
@@ -16,14 +17,13 @@ public class Board extends JComponent implements KeyListener {
     PositionedImage image = new PositionedImage("hero-down.png", 0, 0);
 
     public Board() {
-       // testBoxX = 0;
-       // testBoxY = 0;
+        // testBoxX = 0;
+        // testBoxY = 0;
 
         // set the size of your draw board
         setPreferredSize(new Dimension(720, 720));
         setVisible(true);
     }
-
 
 
     @Override
@@ -34,13 +34,7 @@ public class Board extends JComponent implements KeyListener {
         // you can create and draw an image using the class below e.g.
 
         image.draw(graphics);
-
-
-
-
     }
-
-
 
     // To be a KeyListener the class needs to have these 3 methods in it
     @Override
@@ -59,13 +53,11 @@ public class Board extends JComponent implements KeyListener {
         // When the up or down keys hit, we change the position of our box
         if (e.getKeyCode() == KeyEvent.VK_UP) {
             image.posY -= 72;
-        } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
+        } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
             image.posY += 72;
-        }
-        else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            image.posX +=72;
-        }
-        else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+        } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            image.posX += 72;
+        } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             image.posX -= 72;
         }
         // and redraw to have a new picture with the new coordinates
@@ -73,9 +65,5 @@ public class Board extends JComponent implements KeyListener {
     }
 
 
-    public void createMap () {
 
-    }
-
-}
-
+        }
