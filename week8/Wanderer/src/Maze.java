@@ -5,21 +5,23 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class Maze {
+   static ArrayList<ArrayList<java.lang.Character>> map;
 
-    static ArrayList<ArrayList<Character>> map;
 
     Maze() {
-
+        map();
 
     }
 
-    public static ArrayList<ArrayList<Character>> map() {
-        map = new ArrayList<>();
+    public static ArrayList<ArrayList<java.lang.Character>> map() {
+        Level level1 = new Level();
+        level1.level= "level0.txt";
+          map = new ArrayList<>();
         try {
 
             ArrayList<ArrayList<java.lang.Character>> characters = new ArrayList<>();
             ArrayList<String> lines =
-                    (ArrayList<String>) Files.readAllLines(Paths.get("level0.txt"));
+                    (ArrayList<String>) Files.readAllLines(Paths.get(level1.level));
 
             ArrayList<java.lang.Character> lineInChars;
             for (String line : lines) {
@@ -27,17 +29,16 @@ public class Maze {
                 for (char actChar : line.toCharArray()) {
                     lineInChars.add(actChar);
                 }
-                characters.add(lineInChars);
+                map.add(lineInChars);
             }
 
         } catch (IOException e) {
             System.out.println("upsey happened");
         }
-        return map;
+        return map ;
     }
 
     public void drawMaze(Graphics graphics) {
-
 
         for (int i = 0; i < map.size(); i++) {
             for (int j = 0; j < map.get(i).size(); j++) {

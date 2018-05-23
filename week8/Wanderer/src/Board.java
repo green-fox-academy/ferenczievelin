@@ -32,6 +32,8 @@ public class Board extends JComponent implements KeyListener {
         //graphics.fillRect(testBoxX, testBoxY, 100, 100);
         // here you have a 720x720 canvas
         // you can create and draw an image using the class below e.g.
+        Maze maze = new Maze();
+        maze.drawMaze(graphics);
 
         hero.draw(graphics);
 

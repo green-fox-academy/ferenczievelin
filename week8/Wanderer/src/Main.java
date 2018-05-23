@@ -17,7 +17,7 @@ public class Main {
         // Notice (at the top) that we can only do this
         // because this Board class (the type of the board object) is also a KeyListener
         Maze maze = new Maze();
-        maze.drawMaze(frame.getGraphics());
+      maze.drawMaze(frame.getGraphics());
     }
 
 }
