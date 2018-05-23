@@ -12,13 +12,13 @@ import java.util.Scanner;
 
 public class Board extends JComponent implements KeyListener {
 
-    int testBoxX;
-    int testBoxY;
-    PositionedImage image = new PositionedImage("hero-down.png", 0, 0);
+
+    PositionedImage hero = new PositionedImage("hero-down.png", 0, 0);
+
 
     public Board() {
-        // testBoxX = 0;
-        // testBoxY = 0;
+
+
 
         // set the size of your draw board
         setPreferredSize(new Dimension(720, 720));
@@ -29,11 +29,12 @@ public class Board extends JComponent implements KeyListener {
     @Override
     public void paint(Graphics graphics) {
         super.paint(graphics);
-        graphics.fillRect(testBoxX, testBoxY, 100, 100);
+        //graphics.fillRect(testBoxX, testBoxY, 100, 100);
         // here you have a 720x720 canvas
         // you can create and draw an image using the class below e.g.
 
-        image.draw(graphics);
+        hero.draw(graphics);
+
 
     }
 
@@ -52,14 +53,24 @@ public class Board extends JComponent implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
         // When the up or down keys hit, we change the position of our box
+
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            image.posY -= 72;
+            hero.posY -= 72;
+            hero = new PositionedImage("hero-up.png",hero.posX,hero.posY);
+
+
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            image.posY += 72;
+            hero.posY += 72;
+            hero = new PositionedImage("hero-down.png",hero.posX,hero.posY);
+
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            image.posX += 72;
+            hero.posX += 72;
+            hero = new PositionedImage("hero-right.png",hero.posX,hero.posY);
+
+
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            image.posX -= 72;
+            hero.posX -= 72;
+            hero = new PositionedImage("hero-left.png",hero.posX,hero.posY);
         }
         // and redraw to have a new picture with the new coordinates
         repaint();
