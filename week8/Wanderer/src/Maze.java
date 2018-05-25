@@ -5,20 +5,19 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 
 public class Maze {
-   static ArrayList<ArrayList<java.lang.Character>> map;
+    static ArrayList<ArrayList<java.lang.Character>> map;
 
     Maze() {
-        map();
-
+        map = map();
     }
 
     public static ArrayList<ArrayList<java.lang.Character>> map() {
         Level level1 = new Level();
-        level1.level= "level0.txt";
-          map = new ArrayList<>();
+        level1.level = "level0.txt";
+        map = new ArrayList<>();
         try {
 
-            ArrayList<ArrayList<java.lang.Character>> characters = new ArrayList<>();
+         //   ArrayList<ArrayList<java.lang.Character>> characters = new ArrayList<>();
             ArrayList<String> lines =
                     (ArrayList<String>) Files.readAllLines(Paths.get(level1.level));
 
@@ -34,7 +33,7 @@ public class Maze {
         } catch (IOException e) {
             System.out.println("upsey happened");
         }
-        return map ;
+        return map;
     }
 
     public void drawMaze(Graphics graphics) {
@@ -42,7 +41,7 @@ public class Maze {
         for (int i = 0; i < map.size(); i++) {
             for (int j = 0; j < map.get(i).size(); j++) {
                 {
-                    if (map.get(i).get(j).equals('p')) {
+                    if (map.get(j).get(i).equals('p')) {
                         PositionedImage path = new PositionedImage("floor.png", i * 72, j * 72);
                         path.draw(graphics);
 

@@ -20,7 +20,6 @@ public class Board extends JComponent implements KeyListener {
     public Board() {
 
 
-
         // set the size of your draw board
         setPreferredSize(new Dimension(720, 720));
         setVisible(true);
@@ -56,30 +55,37 @@ public class Board extends JComponent implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         BoadOperation boadOperation = new BoadOperation(hero.posX,hero.posY);
-        // When the up or down keys hit, we change the position of our box
 
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            if (boadOperation.isPath(hero.posX,hero.posY))
-            hero.posY -= 72;
-            hero = new PositionedImage("hero-up.png", hero.posX, hero.posY);
 
+           if ((hero.posY-72 < 0) && boadOperation.isPath(hero.posX,hero.posY-72) ) {
+                hero.posY -= 72;
+                hero = new PositionedImage("hero-up.png", hero.posX, hero.posY);
+            }
 
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
-            if (boadOperation.isPath(hero.posX,hero.posY))
-            hero.posY += 72;
-            hero = new PositionedImage("hero-down.png",hero.posX,hero.posY);
+
+        //    if ((hero.posY<720) && boadOperation.isPath(hero.posX,hero.posY+72)) {
+                hero.posY += 72;
+                hero = new PositionedImage("hero-down.png", hero.posX, hero.posY);
+      //      }
+
 
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            if (boadOperation.isPath(hero.posX,hero.posY))
-            hero.posX += 72;
-            hero = new PositionedImage("hero-right.png",hero.posX,hero.posY);
+
+          //  if ((hero.posX<720) && boadOperation.isPath(hero.posX+72,hero.posY) ) {
+                hero.posX += 72;
+                hero = new PositionedImage("hero-right.png",hero.posX,hero.posY);
+        //}
 
 
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            if (boadOperation.isPath(hero.posX,hero.posY))
-            hero.posX -= 72;
-            hero = new PositionedImage("hero-left.png",hero.posX,hero.posY);
-        }
+
+          //  if ((hero.posY<0) && boadOperation.isPath(hero.posX-72,hero.posY)) {
+                hero.posX -= 72;
+                hero = new PositionedImage("hero-left.png",hero.posX,hero.posY);}
+
+        //}
         // and redraw to have a new picture with the new coordinates
         repaint();
     }
