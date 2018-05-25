@@ -13,7 +13,8 @@ import java.util.Scanner;
 public class Board extends JComponent implements KeyListener {
 
 
-    PositionedImage hero = new PositionedImage("hero-down.png", 0, 0);
+    Hero heroO = new Hero();
+    PositionedImage hero = new PositionedImage("hero-down.png", 0 ,0);
 
 
     public Board() {
@@ -47,30 +48,35 @@ public class Board extends JComponent implements KeyListener {
     }
 
     @Override
-    public void keyPressed(KeyEvent e) {
+    public void keyReleased(KeyEvent e) {
 
     }
 
     // But actually we can use just this one for our goals here
     @Override
-    public void keyReleased(KeyEvent e) {
+    public void keyPressed(KeyEvent e) {
+        BoadOperation boadOperation = new BoadOperation(hero.posX,hero.posY);
         // When the up or down keys hit, we change the position of our box
 
         if (e.getKeyCode() == KeyEvent.VK_UP) {
+            if (boadOperation.isPath(hero.posX,hero.posY))
             hero.posY -= 72;
-            hero = new PositionedImage("hero-up.png",hero.posX,hero.posY);
+            hero = new PositionedImage("hero-up.png", hero.posX, hero.posY);
 
 
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
+            if (boadOperation.isPath(hero.posX,hero.posY))
             hero.posY += 72;
             hero = new PositionedImage("hero-down.png",hero.posX,hero.posY);
 
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
+            if (boadOperation.isPath(hero.posX,hero.posY))
             hero.posX += 72;
             hero = new PositionedImage("hero-right.png",hero.posX,hero.posY);
 
 
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+            if (boadOperation.isPath(hero.posX,hero.posY))
             hero.posX -= 72;
             hero = new PositionedImage("hero-left.png",hero.posX,hero.posY);
         }

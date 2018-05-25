@@ -7,7 +7,6 @@ import java.util.ArrayList;
 public class Maze {
    static ArrayList<ArrayList<java.lang.Character>> map;
 
-
     Maze() {
         map();
 
@@ -51,7 +50,6 @@ public class Maze {
                     } else {
                         PositionedImage wall = new PositionedImage("wall.png", i * 72, j * 72);
                         wall.draw(graphics);
-
                     }
 
                 }
@@ -59,4 +57,5 @@ public class Maze {
 
         }
     }
+
 }
