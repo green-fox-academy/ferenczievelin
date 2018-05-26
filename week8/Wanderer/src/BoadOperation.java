@@ -12,4 +12,6 @@ public class BoadOperation {
         return Maze.map.get(posY / 72).get(posX / 72).equals('p');
     }
 
+
+
 }

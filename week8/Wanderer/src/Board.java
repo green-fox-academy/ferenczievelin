@@ -5,6 +5,8 @@ import java.awt.event.KeyListener;
 
 public class Board extends JComponent implements KeyListener {
 
+
+
     PositionedImage hero = new PositionedImage("hero-down.png", 0, 0);
     Boss boss = new Boss();
     Monster keyholder = new Monster();
@@ -29,8 +31,9 @@ public class Board extends JComponent implements KeyListener {
         // you can create and draw an image using the class below e.g.
         Maze maze = new Maze();
         maze.drawMaze(graphics);
-
+        Hero man = new Hero();
         hero.draw(graphics);
+     //   man.drawHero(graphics)
 
 
     }
@@ -43,6 +46,11 @@ public class Board extends JComponent implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_N) {
+         //   man.posX = 150;
+       //     man.posY = 150;
+           // man.image = new PositionedImage("fun.png",man.posX,man.posY);
+        }
 
     }
 
@@ -78,7 +86,7 @@ public class Board extends JComponent implements KeyListener {
 
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 
-            if ((hero.posY - 72 <= 0) && boadOperation.isPath(hero.posX - 72, hero.posY)) {
+            if ((hero.posX - 72 >= 0) && boadOperation.isPath(hero.posX - 72, hero.posY)) {
                 hero.posX -= 72;
                 steps++;
                 hero = new PositionedImage("hero-left.png", hero.posX, hero.posY);
@@ -87,6 +95,10 @@ public class Board extends JComponent implements KeyListener {
         }
         // and redraw to have a new picture with the new coordinates
         repaint();
+    }
+
+    void battle () {
+
     }
 
 
