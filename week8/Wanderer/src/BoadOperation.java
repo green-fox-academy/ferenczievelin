@@ -9,7 +9,7 @@ public class BoadOperation {
     }
 
     public boolean isPath(int posX, int posY) {
-        return Maze.map.get(posX / 72).get(posY / 72).equals('p');
+        return Maze.map.get(posY / 72).get(posX / 72).equals('p');
     }
 
 }
