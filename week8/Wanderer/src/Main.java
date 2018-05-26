@@ -14,6 +14,7 @@ public class Main {
         // The board object will be notified when hitting any key
         // with the system calling one of the below 3 methods
         frame.addKeyListener(board);
+        Hero hero = new Hero();
         // Notice (at the top) that we can only do this
         // because this Board class (the type of the board object) is also a KeyListener
         Maze maze = new Maze();
