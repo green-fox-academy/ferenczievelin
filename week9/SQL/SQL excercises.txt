@@ -1,0 +1,15 @@
+1.
+SELECT title FROM movie WHERE director = 'Steven Spielberg';
+2.
+SELECT DISTINCT year FROM movie 
+INNER JOIN rating ON movie.mid = rating.mid WHERE stars = 4 OR stars = 5 ORDER BY year;
+3.
+SELECT title FROM movie LEFT JOIN rating ON movie.mid = rating.mid WHERE rating.mid IS NULL;
+4.
+SELECT name FROM reviewer INNER JOIN rating ON reviewer.rid = rating.rid WHERE rating.ratingDate IS NULL;
+5.
+SELECT reviewer.name, movie.title, rating.stars, rating.ratingDate
+FROM ((reviewer
+INNER JOIN rating ON reviewer.rid = rating.rid)
+INNER JOIN movie ON rating.mid = movie.mid) ORDER BY reviewer.name, movie.title, rating.stars;
+
