@@ -1,3 +1,4 @@
+link 1
 1.
 SELECT title FROM movie WHERE director = 'Steven Spielberg';
 2.
@@ -12,4 +13,24 @@ SELECT reviewer.name, movie.title, rating.stars, rating.ratingDate
 FROM ((reviewer
 INNER JOIN rating ON reviewer.rid = rating.rid)
 INNER JOIN movie ON rating.mid = movie.mid) ORDER BY reviewer.name, movie.title, rating.stars;
+
+link 2.
+1.
+SELECT DISTINCT name FROM 
+reviewer JOIN rating ON reviewer.rID = rating.rID JOIN movie ON rating.mID = movie.mID
+WHERE movie.title = "Gone with the wind";
+
+2. 
+SELECT movie.director, movie.title, rating.stars FROM reviewer 
+INNER JOIN rating ON rating.rid = reviewer.rid 
+INNER JOIN movie ON rating.mid = movie.mid 
+WHERE movie.director = reviewer.name;
+
+3.
+SELECT title FROM (SELECT title from movie UNION SELECT name FROM reviewer);
+
+4. 
+
+
+
 
