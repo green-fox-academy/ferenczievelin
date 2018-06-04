@@ -11,6 +11,7 @@ import java.util.Arrays;
 public class Controller {
     private String name;
     @GetMapping("/cicak")
+    @ResponseBody
     public ArrayList<String> getCicaNames () {
         return new ArrayList<>(Arrays.asList(
                 "cirmi",
