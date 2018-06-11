@@ -14,6 +14,6 @@ public class HelloRESTController {
         return "hi";
     }
 
-@RequestMapping ("/hi")
+@RequestMapping ("/hi");
 
 }
