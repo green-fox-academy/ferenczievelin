@@ -25,5 +25,12 @@ public class Todo {
         this.title = title;
         this.urgent = urgent;
         this.done = done;
+
+    }
+
+    public Todo(String title) {
+        this.title = title;
+
+
     }
 }
