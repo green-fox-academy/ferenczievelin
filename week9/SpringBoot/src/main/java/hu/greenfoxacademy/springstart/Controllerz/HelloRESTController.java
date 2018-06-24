@@ -16,8 +16,9 @@ public class HelloRESTController {
     @RequestMapping("/greeting")
     @ResponseBody
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name ) {
-        return new Greeting (id.get(),
+        return new Greeting (id.incrementAndGet(),
                 String.format(hello, name));
+
 
     }
 
