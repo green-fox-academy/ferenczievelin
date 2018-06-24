@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class Repo {
 
     public ArrayList<Fox> foxes = new ArrayList<Fox>();
+    public static Fox currentFox;
 
 
     public void saveFox(Fox fox) {

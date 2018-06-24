@@ -12,13 +12,13 @@ import org.springframework.stereotype.Repository;
 public class FoxyApplication implements CommandLineRunner {
 
     @Autowired
+    static
     Repo repo;
 
     public static void main(String[] args) {
 
 
         SpringApplication.run(FoxyApplication.class, args);
-
 
     }
 
