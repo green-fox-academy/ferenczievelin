@@ -9,14 +9,12 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @Controller
 public class HelloWorldController {
-   private static final String hello = "Hello, %s!";
-    AtomicLong counter = new AtomicLong();
 
-    @RequestMapping("/web/greeting")
-    public String greeting(Model model) {
-        model.addAttribute("name", "World");
+  //  @RequestMapping("/web/greeting")
+   // public String greeting(Model model) {
+    //    model.addAttribute("name", "World");
 
-        return "greeting";
-    }
+   //     return "greeting";
+   // }
 }
 
