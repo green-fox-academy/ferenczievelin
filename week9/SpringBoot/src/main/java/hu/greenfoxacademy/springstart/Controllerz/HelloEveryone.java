@@ -29,6 +29,6 @@ public class HelloEveryone {
             style.addAttribute("fontSize", fontSize);
             style.addAttribute("fontColour", fontColours[fontColour]);
         }
-        return "greeting";
+        return "helloEveryone";
     }
 }
