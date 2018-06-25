@@ -6,6 +6,10 @@
 </head>
 <body>
 <body th:style="'font-size:' +  ${fontSize} + 'px;' + 'color:' + ${fontColour}"/>
-<p th:text="${greetingInALanguage} + '!'"/>
+<tr th:each="hello : ${hello} + '!'"/>
+<tr th:each="hello : ${hellos}" style="'font-size:' + ${fontSize} + 'px;' + 'color:' + ${fontColour}">
+    <td th:text="${hello}"></td>
+    
+</tr>
 </body>
 </html>

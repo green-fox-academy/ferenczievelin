@@ -9,9 +9,8 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @Controller
 public class HelloEveryone {
-    AtomicLong languageind = new AtomicLong(0);
     int fontsize;
-    int lang;
+
     String[] fontColours = {"Black", "Blue", "BlueViolet", "CadetBlue", "Crimson", "DarkMagenta", "DarkOrange", "DarkRed", "DarkSalmon", "DarkSlateGray", "ForestGreen", "Fuchsia", "LightBlue"};
 
     String[] hellos = {"Mirëdita", "Ahalan", "Parev", "Zdravei", "Nei Ho", "Dobrý den", "Ahoj", "Goddag", "Goede dag, Hallo", "Hello", "Saluton", "Hei", "Bonjour",
@@ -24,10 +23,10 @@ public class HelloEveryone {
             Random random = new Random();
             int fontColour = random.nextInt(fontColours.length);
             int fontSize = (int) (12 + Math.random() * 30);
-            model.addAttribute("hello",hellos[lang]);
-            lang++;
+            model.addAttribute("hello",hellos[i]);
             style.addAttribute("fontSize", fontSize);
             style.addAttribute("fontColour", fontColours[fontColour]);
+
         }
         return "helloEveryone";
     }
