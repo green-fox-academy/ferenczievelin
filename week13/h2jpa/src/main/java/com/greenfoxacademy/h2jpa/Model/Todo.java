@@ -10,6 +10,6 @@ public class Todo {
     String title;
     boolean urgent;
     boolean done;
-    
+
 
 }
