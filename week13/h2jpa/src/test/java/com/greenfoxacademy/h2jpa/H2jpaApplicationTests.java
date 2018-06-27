@@ -1,4 +1,4 @@
-package com.greenfoxacademy.demo;
+package com.greenfoxacademy.h2jpa;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DemoApplicationTests {
+public class H2jpaApplicationTests {
 
     @Test
     public void contextLoads() {

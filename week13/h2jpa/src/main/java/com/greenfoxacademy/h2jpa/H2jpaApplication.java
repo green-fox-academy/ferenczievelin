@@ -1,12 +1,12 @@
-package com.greenfoxacademy.demo;
+package com.greenfoxacademy.h2jpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoApplication {
+public class H2jpaApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+        SpringApplication.run(H2jpaApplication.class, args);
     }
 }
