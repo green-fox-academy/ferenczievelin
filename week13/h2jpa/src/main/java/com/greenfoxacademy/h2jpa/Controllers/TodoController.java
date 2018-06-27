@@ -20,7 +20,7 @@ public class TodoController {
 
     @RequestMapping("/todo")
     public String todo(Model model) {
-        model.addAttribute("this is my first todo");
+        model.addAttribute("todos", todoRepo.findAll());
         return "index";
     }
 

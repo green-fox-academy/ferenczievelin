@@ -11,8 +11,6 @@ import javax.persistence.Id;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 public class Todo {
     @Id
@@ -23,4 +21,12 @@ public class Todo {
     boolean done;
 
 
+    public Todo(String title, boolean urgent, boolean done) {
+        this.title = title;
+        this.done = done;
+        this.urgent = urgent;
+    }
+
+    public Todo() {
+    }
 }
