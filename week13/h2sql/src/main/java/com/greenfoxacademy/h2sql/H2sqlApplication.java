@@ -1,24 +1,24 @@
-package com.greenfoxacademy.h2jpa;
+package com.greenfoxacademy.h2sql;
 
-import com.greenfoxacademy.h2jpa.Model.Todo;
-import com.greenfoxacademy.h2jpa.Repository.TodoRepo;
+import com.greenfoxacademy.h2sql.Model.Todo;
+import com.greenfoxacademy.h2sql.Repos.TodoRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class H2jpaApplication implements CommandLineRunner {
+public class H2sqlApplication implements CommandLineRunner {
 
     private final
     TodoRepo todoRepo;
 
     @Autowired
-    public H2jpaApplication(TodoRepo todoRepository) {
-        this.todoRepo = todoRepository;
+    public H2sqlApplication(TodoRepo todoRepo) {
+        this.todoRepo = todoRepo;
     }
     public static void main(String[] args) {
-        SpringApplication.run(H2jpaApplication.class, args);
+        SpringApplication.run(H2sqlApplication.class, args);
     }
 
 
