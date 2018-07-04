@@ -12,8 +12,8 @@ public class PostServiceImpl implements PostService {
 
     private final PostRepository postrepository;
 
-    @Autowired 
-    public PostServiceImpl (PostRepository postRepository) {
+    @Autowired
+    public PostServiceImpl(PostRepository postRepository) {
         this.postrepository = postRepository;
     }
 
@@ -24,16 +24,17 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public void addPost(Post post) {
+        postrepository.save(post);
 
     }
 
     @Override
     public void update(Post post) {
-
+        this.addPost(post);
     }
 
     @Override
     public void delete(Long id) {
-
+        postrepository.deleteById(id);
     }
 }

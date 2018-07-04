@@ -20,12 +20,12 @@ public class PostController {
     }
 
     @GetMapping("posts")
-    public List<Post> getAllPosts () {
+    public List<Post> getAllPosts() {
         return postService.getAllPosts();
     }
 
     @PostMapping("posts")
-    public List<Post> addPost (@RequestBody Post post) {
+    public List<Post> addPost(@RequestBody Post post) {
         postService.addPost(post);
         return (List<Post>) postService.getAllPosts();
     }
