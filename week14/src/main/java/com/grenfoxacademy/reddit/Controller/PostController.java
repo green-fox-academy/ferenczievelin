@@ -3,10 +3,7 @@ package com.grenfoxacademy.reddit.Controller;
 import com.grenfoxacademy.reddit.Model.Post;
 import com.grenfoxacademy.reddit.Service.PostServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,5 +26,13 @@ public class PostController {
         postService.addPost(post);
         return (List<Post>) postService.getAllPosts();
     }
+
+    @PutMapping("/posts/{id}/upvote")
+    public List<Post> upvote(@PathVariable(name="id") Long id) {
+        postService.increaseScore(postService.getPostById(id));
+        return null ;
+    }
+
+
 
 }
