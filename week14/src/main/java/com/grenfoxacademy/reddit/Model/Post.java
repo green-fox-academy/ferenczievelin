@@ -10,7 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Date;
 
-
+@Entity
 public class Post {
     @Id
     @GeneratedValue

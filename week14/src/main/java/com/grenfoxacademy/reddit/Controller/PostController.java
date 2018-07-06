@@ -22,14 +22,14 @@ public class PostController {
     }
 
     @PostMapping("posts")
-    public List<Post> addPost(@RequestBody Post post) {
+    public List<Post> addPost(@RequestBody Post title,) {
         postService.addPost(post);
         return (List<Post>) postService.getAllPosts();
     }
 
     @PutMapping("/posts/{id}/upvote")
     public List<Post> upvote(@PathVariable(name="id") Long id) {
-        postService.increaseScore(postService.getPostById(id));
+
         return null ;
     }
 
