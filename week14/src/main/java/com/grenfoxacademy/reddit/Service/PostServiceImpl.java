@@ -38,17 +38,16 @@ public class PostServiceImpl implements PostService {
     public void delete(Long id) {
         postrepository.deleteById(id);
     }
-// TODO
+
     @Override
     public void increaseScore(Post post) {
-        post.getScore();
-
-
+        post.setScore(post.getScore() + 1);
+        postrepository.save(post);
     }
 
     @Override
     public Optional<Post> getPostById(Long id) {
-       return   postrepository.findById(id);
+        return postrepository.findById(id);
 
     }
 }
