@@ -22,7 +22,7 @@ public class PostController {
     }
 
     @PostMapping("posts")
-    public List<Post> addPost(@RequestBody Post title,) {
+    public List<Post> addPost(@RequestBody Post post) {
         postService.addPost(post);
         return (List<Post>) postService.getAllPosts();
     }

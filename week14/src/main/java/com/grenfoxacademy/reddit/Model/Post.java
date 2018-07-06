@@ -22,16 +22,20 @@ public class Post {
     private String owner;
     private int vote;
 
-    public Post(String title, String url, Long timestamp, Long score, String owner, int vote) {
+    public Post(String title, String url, Long score, String owner, int vote) {
         this.title = title;
         this.url = url;
-        this.timestamp = timestamp;
         this.score = score;
         this.owner = owner;
         this.vote = vote;
     }
 
     public Post() {
+    }
+
+    public Post (String title, String url) {
+        this.title = title;
+        this.url = url;
     }
 
 

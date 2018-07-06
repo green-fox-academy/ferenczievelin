@@ -13,4 +13,6 @@ public class RedditApplication {
         SpringApplication.run(RedditApplication.class, args);
     }
 
+    Post post = new Post("Vuk", "www.vuk.hu" );
+
 }

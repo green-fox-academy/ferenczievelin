@@ -15,7 +15,7 @@ public interface PostService {
 
     void delete(Long id);
 
-    void increaseScore(Post post);
 
-    Optional<Post> getPostById(Long id);
+
+
 }
