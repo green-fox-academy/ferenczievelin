@@ -18,6 +18,8 @@ public class PostServiceImpl implements PostService {
         this.postrepository = postRepository;
     }
 
+
+
     @Override
     public List<Post> getAllPosts() {
         return (List<Post>) postrepository.findAll();
@@ -37,5 +39,10 @@ public class PostServiceImpl implements PostService {
     @Override
     public void delete(Long id) {
         postrepository.deleteById(id);
+    }
+
+    @Override
+    public void scorePlusOne(Post post) {
+        post.setScore(post.getScore()+1);
     }
 }

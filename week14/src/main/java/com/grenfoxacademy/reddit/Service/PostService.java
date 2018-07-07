@@ -15,6 +15,7 @@ public interface PostService {
 
     void delete(Long id);
 
+    void scorePlusOne (Post post) ;
 
 
 
