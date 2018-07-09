@@ -42,7 +42,16 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public void scorePlusOne(Post post) {
-        post.setScore(post.getScore()+1);
+    public void increaseScoreOfPost(Long id) {
+        Post post = postrepository.findById(id).get();
+        post.setScore(post.getScore() + 1);
+        postrepository.save(post);
+    }
+
+    @Override
+    public void decreaseScoreOfPost(Long id) {
+        Post post = postrepository.findById(id).get();
+        post.setScore(post.getScore() - 1);
+        postrepository.save(post);
     }
 }

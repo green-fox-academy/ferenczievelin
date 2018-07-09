@@ -28,9 +28,15 @@ public class PostController {
     }
 
     @PutMapping("/posts/{id}/upvote")
-    public List<Post> upvote(@PathVariable(name="id") Long id) {
+    public List<Post> upVotePost(@PathVariable Long id) {
+        postService.increaseScoreOfPost(id);
+        return postService.getAllPosts();
+    }
 
-        return null ;
+    @PutMapping("/posts/{id}/downvote")
+    public List<Post> downVotePost(@PathVariable Long id) {
+        postService.decreaseScoreOfPost(id);
+        return postService.getAllPosts();
     }
 
 
