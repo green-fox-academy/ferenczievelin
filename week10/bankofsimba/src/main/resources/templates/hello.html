@@ -10,6 +10,9 @@
 <body>
 <div layout:fragment="content">
     <h1>Hello world</h1>
+    <div layout:fragment="content">
+        <span th:text="|Hello ${name}|"/>, did you know that <span th:utext="${formatted}"/> is <span th:text="${formatted}"/> in HTML?
+    </div>
 </div>
 </body>
 <th:block layout:fragment="scripts">
