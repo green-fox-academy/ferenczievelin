@@ -11,7 +11,12 @@
 <div layout:fragment="content">
     <h1>Hello world</h1>
     <div layout:fragment="content">
-        <span th:text="|Hello ${name}|"/>, did you know that <span th:utext="${formatted}"/> is <span th:text="${formatted}"/> in HTML?
+        <div class="list-group">
+            <a th:each="resource : ${resources}"
+               th:href="${resource.url}" class="list-group-item">
+                <b th:text="${resource.name}"></b>
+            </a>
+        </div>
     </div>
 </div>
 </body>
