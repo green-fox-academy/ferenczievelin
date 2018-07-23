@@ -26,10 +26,14 @@ public class BankController {
 
     @GetMapping("htmlception")
     public String htmlCeption(Model model) {
-        String textPart= "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>";
+        String textPart = "This is an <em>HTML</em> text. <b>Enjoy yourself!</b>";
         model.addAttribute("text", textPart);
         return "htmlception";
+    }
 
-
+    @GetMapping("bankaccounts")
+    public String bankAccounts (Model model) {
+        model.addAttribute("accounts", BankService.getAllAcccount());
+        return "bankaccounts";
     }
 }
