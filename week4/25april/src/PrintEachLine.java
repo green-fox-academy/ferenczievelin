@@ -16,7 +16,7 @@ public class PrintEachLine {
         try {
             getStuff = getLines();
 
-        } catch (IOException sh_thappens) {
+        } catch (IOException ioEx) {
             System.out.println("Unable to read file.");
         } finally {
             if (getStuff != null) {
