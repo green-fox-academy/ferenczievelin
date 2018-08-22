@@ -1,0 +1,3 @@
+simple http request : 
+
+https://github.com/green-fox-academy/josanandi/blob/master/Week-10/bankofsimba/src/main/java/com/greenfoxacademy/bankofsimba/controllers/WebController.java
